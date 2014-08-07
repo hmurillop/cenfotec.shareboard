@@ -53,7 +53,7 @@
                
                 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i>Diego Vargas<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle userBar" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i>Diego Vargas<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-power-off"></i> Salir</a>
@@ -65,31 +65,25 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="index.html"><i class="fa fa-fw fa-user"></i>Perfil</a>
+                        <a href="blog_1.html"><i class="fa fa-fw fa-user"></i>Perfil</a>
                     </li>
                     <li>
-                        <a href="charts.html"><i class="fa fa-fw  fa-comments"></i>Foros</a>
+                        <a href="foro.html"><i class="fa fa-fw  fa-comments"></i>Foros</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw  fa-file-pdf-o "></i>Documentación</a>
+                        <a href="documentacion.html"><i class="fa fa-fw  fa-file-pdf-o "></i>Documentación</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw  fa-wrench"></i>Configuración<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
-                            <li>
-                                <a href="#">Blog</a>
+                            <li class="active"  >
+                                <a href="conf_foro.html">Foro</a>
                             </li>
                             <li>
-                                <a href="#">Foro</a>
+                                <a href="conf_foro.html">Usuario</a>
                             </li>
-                            <li>
-                                <a href="#">Usuario</a>
-                            </li>
-                            <li>
-                                <a href="#">Documentación</a>
-                            </li>
-                            <li>
-                                <a href="#">Administración del sistema</a>
+                            <li >
+                                <a href="conf_foro.html">Administración del sistema</a>
                             </li>
                         </ul>
                     </li>
@@ -103,284 +97,144 @@
             <div class="container-fluid">
 
                 <div class="row">
-
-                    <div class="col-sm-6">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-fw fa-plus-square"></i>Crear foro</h3>
-                            </div>
-                            <div class="panel-body">
-                                <form role="form">
-
-                                    <div class="form-group">
-                                        <label>Carrera</label>
-                                        <select class="form-control">
-                                            <option selected >Desarrollo y diseño web</option>
-                                            <option>Desarrollo de software</option>
-                                            <option>Redes</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Curso</label>
-                                        <select class="form-control">
-                                            <option selected >Proyecto 1</option>
-                                            <option>Bases de datos</option>
-                                            <option>Programación 1</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Periodo</label>
-                                        <select class="form-control">
-                                            <option selected >Primer Cuatrimestre</option>
-                                            <option>Segundo Cuatrimestre</option>
-                                            <option>Tercer Cuatrimestre</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Profesor</label>
-                                        <select class="form-control">
-                                            <option selected >Alvaro Cordero</option>
-                                            <option>Alonso Guevara</option>
-                                            <option>Pablo Monestel</option>
-                                        </select>
-                                    </div>
-
-                                    <label>Miembros</label>
-
-                                    <div class="form-group input-group">
-                                        <input type="text" class="form-control">
-                                        <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>
-                                    </div>
-                                    <ul class="list-group">
-                                        <li class="list-group-item">Diego Vargas
-                                            <div class="pull-right">
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-user"></i>Estudiante
-                                                </label>
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-male"></i>Asistente
-                                                </label>
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-child"></i>Invitado
-                                                </label>
-                                                <i class="fa fa-fw fa-times"></i>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">Hector Murillo
-                                            <div class="pull-right">
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-user"></i>Estudiante
-                                                </label>
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-male"></i>Asistente
-                                                </label>
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-child"></i>Invitado
-                                                </label>
-                                                <i class="fa fa-fw fa-times"></i>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">David Fallas
-                                            <div class="pull-right">
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-user"></i>Estudiante
-                                                </label>
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-male"></i>Asistente
-                                                </label>
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-child"></i>Invitado
-                                                </label>
-                                                <i class="fa fa-fw fa-times"></i>
-                                            </div>
-                                        </li>
-                                    </ul>
-
-                                    
-
-                                    <button type="submit" class="btn btn-sm btn-success">Crear foro</button>
-                                </form> 
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-lg btn-success"><i class="fa fa-fw fa-search"></i>Buscar blog</button>
-                        <button type="button" class="btn btn-lg btn-success"><i class="fa fa-fw fa-plus"></i>Nueva publicación</button>
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-success"><i class="fa fa-fw fa-search"></i>Buscar foro</button>
+                        <button type="button" class="btn btn-success"><i class="fa fa-fw fa-plus"></i>Crear foro</button>
                         <hr>
-                        <div class="panel panel-success">
-                            
-                            <div class="panel-body">
-                                <form role="form">
-
-                                    <div class="form-group">
-                                        <label>Nombre</label>
-                                        <input class="form-control"  placeholder="Eje: Ana" type="text">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Apellido</label>
-                                        <input class="form-control" placeholder="Eje: Azofeifa" type="text">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Carrera</label>
-                                        <input class="form-control" placeholder="Eje: Diseño y Desarrollo Web" type="text">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Email</label>
-                                        <input class="form-control" placeholder="Eje: Ana.Azofeifa@cenfotec.ac.cr" type="email">
-                                    </div>
-
-                                    <button type="submit" class="btn btn-sm btn-success">Buscar</button>
-                                </form>    
-                            </div>
-                            <div class="list-group">
-                                <a href="#" class="list-group-item">Resultado 1</a>
-                                <a href="#" class="list-group-item">Resultado 2</a>
-                                <a href="#" class="list-group-item">Resultado 3</a>
-                                <a href="#" class="list-group-item">Resultado 4</a>
-                                <a href="#" class="list-group-item">Resultado 5</a>
-                            </div>
-                        </div>
                     </div>
-                    <div class="col-sm-6">
+
+                    <div class="col-sm-12">
                         <div class="panel panel-success">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-fw fa-plus-square"></i>Crear foro</h3>
+                                <h3 class="panel-title"><i class="fa fa-fw fa-info-circle"></i>Información de foro</h3>
                             </div>
                             <div class="panel-body">
-                                <form role="form">
+                
+                                    <form role="form">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Carrera</label>
+                                                <select class="form-control">
+                                                    <option selected >Desarrollo y diseño web</option>
+                                                    <option>Desarrollo de software</option>
+                                                    <option>Redes</option>
+                                                </select>
+                                            </div>
 
-                                    <div class="form-group">
-                                        <label>Carrera</label>
-                                        <select class="form-control">
-                                            <option selected >Desarrollo y diseño web</option>
-                                            <option>Desarrollo de software</option>
-                                            <option>Redes</option>
-                                        </select>
-                                    </div>
+                                            <div class="form-group">
+                                                <label>Curso</label>
+                                                <select class="form-control">
+                                                    <option selected >Proyecto 1</option>
+                                                    <option>Bases de datos</option>
+                                                    <option>Programación 1</option>
+                                                </select>
+                                            </div>
 
-                                    <div class="form-group">
-                                        <label>Curso</label>
-                                        <select class="form-control">
-                                            <option selected >Proyecto 1</option>
-                                            <option>Bases de datos</option>
-                                            <option>Programación 1</option>
-                                        </select>
-                                    </div>
+                                            <div class="form-group">
+                                                <label>Periodo</label>
+                                                <select class="form-control">
+                                                    <option selected >Primer Cuatrimestre</option>
+                                                    <option>Segundo Cuatrimestre</option>
+                                                    <option>Tercer Cuatrimestre</option>
+                                                </select>
+                                            </div>
 
-                                    <div class="form-group">
-                                        <label>Periodo</label>
-                                        <select class="form-control">
-                                            <option selected >Primer Cuatrimestre</option>
-                                            <option>Segundo Cuatrimestre</option>
-                                            <option>Tercer Cuatrimestre</option>
-                                        </select>
-                                    </div>
+                                            <div class="form-group">
+                                                <label>Profesor</label>
+                                                <select class="form-control">
+                                                    <option selected >Alvaro Cordero</option>
+                                                    <option>Alonso Guevara</option>
+                                                    <option>Pablo Monestel</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Fecha de cierre:</label>
+                                                <input  class="form-control" type="date" />
+                                            </div>
 
-                                    <div class="form-group">
-                                        <label>Profesor</label>
-                                        <select class="form-control">
-                                            <option selected >Alvaro Cordero</option>
-                                            <option>Alonso Guevara</option>
-                                            <option>Pablo Monestel</option>
-                                        </select>
-                                    </div>
+                                            <div class="form-group">
+                                                <label>Hora de cierre</label>
+                                                <input  class="form-control" type="time" />
+                                            </div>
+                                        </div>
 
-                                    <label>Miembros</label>
+                                        <div class="col-sm-6">
+                                            <label>Miembros</label>
 
-                                    <div class="form-group input-group">
-                                        <input type="text" class="form-control">
-                                        <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>
-                                    </div>
-                                    <ul class="list-group">
-                                        <li class="list-group-item">Diego Vargas
-                                            <div class="pull-right">
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-user"></i>Estudiante
+                                            <div class="form-group input-group">
+                                                <input type="text" class="form-control">
+                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>
+                                            </div>
+                                            <ul class="list-group">
+                                                <li class="list-group-item">Diego Vargas
+                                                    <div class="pull-right">
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox"><i class="fa fa-fw fa-user"></i>Estudiante
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox"><i class="fa fa-fw fa-male"></i>Asistente
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox"><i class="fa fa-fw fa-child"></i>Invitado
+                                                        </label>
+                                                        <i class="fa fa-fw fa-times"></i>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item">Hector Murillo
+                                                    <div class="pull-right">
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox"><i class="fa fa-fw fa-user"></i>Estudiante
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox"><i class="fa fa-fw fa-male"></i>Asistente
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox"><i class="fa fa-fw fa-child"></i>Invitado
+                                                        </label>
+                                                        <i class="fa fa-fw fa-times"></i>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item">David Fallas
+                                                    <div class="pull-right">
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox"><i class="fa fa-fw fa-user"></i>Estudiante
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox"><i class="fa fa-fw fa-male"></i>Asistente
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox"><i class="fa fa-fw fa-child"></i>Invitado
+                                                        </label>
+                                                        <i class="fa fa-fw fa-times"></i>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="form-group">
+                                                <label>Usuarios visibles</label>
+                                                <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>Si
                                                 </label>
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-male"></i>Asistente
-                                                </label>
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-child"></i>Invitado
+                                                <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">No
                                                 </label>
                                             </div>
-                                        </li>
-                                        <li class="list-group-item">Hector Murillo
-                                            <div class="pull-right">
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-user"></i>Estudiante
-                                                </label>
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-male"></i>Asistente
-                                                </label>
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-child"></i>Invitado
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">David Fallas
-                                            <div class="pull-right">
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-user"></i>Estudiante
-                                                </label>
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-male"></i>Asistente
-                                                </label>
-                                                <label class="checkbox-inline">
-                                                    <input type="checkbox"><i class="fa fa-fw fa-child"></i>Invitado
-                                                </label>
-                                            </div>
-                                        </li>
-                                    </ul>
-
-                                    
-
-                                    <button type="submit" class="btn btn-sm btn-success">Crear foro</button>
-                                </form> 
+                                            <button type="submit" class="btn btn-sm btn-success">Guardar datos del nuevo foro</button>
+                                            <button type="submit" class="btn btn-sm btn-success">Guardar cambios</button>
+                                        </div> 
+                                    </form>
+                                
                             </div>
-                        </div>
-                        <button type="button" class="btn btn-lg btn-success"><i class="fa fa-fw fa-search"></i>Buscar blog</button>
-                        <button type="button" class="btn btn-lg btn-success"><i class="fa fa-fw fa-plus"></i>Nueva publicación</button>
-                        <hr>
-                        <div class="panel panel-success">
-                            
-                            <div class="panel-body">
-                                <form role="form">
+                        </div> 
+                    </div>
 
-                                    <div class="form-group">
-                                        <label>Nombre</label>
-                                        <input class="form-control"  placeholder="Eje: Ana" type="text">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Apellido</label>
-                                        <input class="form-control" placeholder="Eje: Azofeifa" type="text">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Carrera</label>
-                                        <input class="form-control" placeholder="Eje: Diseño y Desarrollo Web" type="text">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Email</label>
-                                        <input class="form-control" placeholder="Eje: Ana.Azofeifa@cenfotec.ac.cr" type="email">
-                                    </div>
-
-                                    <button type="submit" class="btn btn-sm btn-success">Buscar</button>
-                                </form>    
-                            </div>
-                            <div class="list-group">
-                                <a href="#" class="list-group-item">Resultado 1</a>
-                                <a href="#" class="list-group-item">Resultado 2</a>
-                                <a href="#" class="list-group-item">Resultado 3</a>
-                                <a href="#" class="list-group-item">Resultado 4</a>
-                                <a href="#" class="list-group-item">Resultado 5</a>
-                            </div>
+                    <div class="col-sm-12">
+                        
+                        <div class="list-group col-sm-6">
+                            <a href="#" class="list-group-item active">Foro 1<i class="fa fa-fw  fa-times pull-right"></i></a>
+                            <a href="#" class="list-group-item">Foro 2<i class="fa fa-fw  fa-times pull-right"></i></a>
+                            <a href="#" class="list-group-item">Foro 3<i class="fa fa-fw  fa-times pull-right"></i></a>
+                            <a href="#" class="list-group-item">Foro 4<i class="fa fa-fw  fa-times pull-right"></i></a>
+                            <a href="#" class="list-group-item">Foro 5<i class="fa fa-fw  fa-times pull-right"></i></a>
                         </div>
                     </div>
 

@@ -268,10 +268,19 @@ a:hover {
 }
 
 .navbar-collapse{
-background: -webkit-linear-gradient(right, #333, #B30064)!important; /* For Safari 5.1 to 6.0 */
-background: -o-linear-gradient(right, #333, #B30064)!important; /* For Opera 11.1 to 12.0 */
-background: -moz-linear-gradient(right, #333, #B30064)!important; /* For Firefox 3.6 to 15 */
-background: linear-gradient(right, #333, #B30064)!important; /* Standard syntax (must be last) */
+background: -webkit-linear-gradient(right, #B30064, #333 )!important; /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(right, #B30064, #333 )!important; /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(right, #B30064, #333 )!important; /* For Firefox 3.6 to 15 */
+background: linear-gradient(right, #B30064, #333 )!important; /* Standard syntax (must be last) */
+}
+
+.row
+{
+    margin-bottom: 50px;
 }
 
 
+.userBar{ 
+    color: #fff!important;}
+.userBar:hover{ 
+    background-color: #C6609C!important;}
