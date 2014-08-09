@@ -11,16 +11,16 @@
        });
 
        $scope.loginPage= function(login){
-       	for(var i = 0; i< $scope.users.length; i++){
+       	for(var i = 0; i < $scope.users.length; i++){
 
        		if($scope.users[i].email == login.email && $scope.users[i].password == login.password){
        			redireccionar();
-       		}
+       		};
        	}
        }
 
        function redireccionar(){
-       	location.href = pagina;
+       	location.href = pagina
        }
     }])
 })();
