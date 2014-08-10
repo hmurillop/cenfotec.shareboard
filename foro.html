@@ -220,7 +220,7 @@
                             </div>
                         </div>
 
-                        <div class="panel panel-success" ng-show="false" >
+                        <div class="panel panel-success" ng-show="false" ng-controller="foroMakerController">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-fw fa-plus"></i>Crear foro</h3>
                             </div>
@@ -229,7 +229,7 @@
                                         
                                             <div class="form-group">
                                                 <label>Carrera</label>
-                                                <select class="form-control">
+                                                <select class="form-control" ng-model="newForo.major">
                                                     <option selected >Desarrollo y diseño web</option>
                                                     <option>Desarrollo de software</option>
                                                     <option>Redes</option>
@@ -238,7 +238,7 @@
 
                                             <div class="form-group">
                                                 <label>Curso</label>
-                                                <select class="form-control">
+                                                <select class="form-control"  ng-model="newForo.subject">
                                                     <option selected >Proyecto 1</option>
                                                     <option>Bases de datos</option>
                                                     <option>Programación 1</option>
@@ -247,7 +247,7 @@
 
                                             <div class="form-group">
                                                 <label>Periodo</label>
-                                                <select class="form-control">
+                                                <select class="form-control"  ng-model="newForo.period">
                                                     <option selected >Primer Cuatrimestre</option>
                                                     <option>Segundo Cuatrimestre</option>
                                                     <option>Tercer Cuatrimestre</option>
@@ -256,7 +256,7 @@
 
                                             <div class="form-group">
                                                 <label>Profesor</label>
-                                                <select class="form-control">
+                                                <select class="form-control"  ng-model="newForo.professor">
                                                     <option selected >Alvaro Cordero</option>
                                                     <option>Alonso Guevara</option>
                                                     <option>Pablo Monestel</option>
@@ -264,14 +264,13 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Fecha de cierre:</label>
-                                                <input  class="form-control" type="date" required/>
+                                                <input  class="form-control" type="date"  ng-model="newForo.closeDate" required/>
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Hora de cierre</label>
-                                                <input  class="form-control" type="time" />
+                                                <input  class="form-control" type="time" ng-model="newForo.closeHour" required/>
                                             </div>
-                                        
                                             <label>Miembros</label>
 
                                             <div class="form-group input-group">
@@ -283,21 +282,11 @@
                                                     <div class="form-group">
                                                     
                                                         <label>Diego Vargas</label><i class="fa fa-fw fa-times pull-right"></i>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox"><i class="fa fa-fw fa-user"></i>Estudiante
-                                                            </label>
-                                                        </div>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox"><i class="fa fa-fw fa-male"></i>Asistente
-                                                            </label>
-                                                        </div>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox"><i class="fa fa-fw fa-child"></i>Invitado
-                                                            </label>
-                                                        </div>
+                                                        <select class="form-control"  ng-model="newForo.period">
+                                                            <option selected ><i class="fa fa-fw fa-user"></i>Estudiante</option>
+                                                            <option><i class="fa fa-fw fa-male"></i>Asistente</option>
+                                                            <option><i class="fa fa-fw fa-child"></i>Invitado</option>
+                                                        </select>
                                                     </div>
                                                         
                                                     
@@ -306,21 +295,11 @@
                                                     <div class="form-group">
                                                     
                                                         <label>Diego Vargas</label><i class="fa fa-fw fa-times pull-right"></i>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox"><i class="fa fa-fw fa-user"></i>Estudiante
-                                                            </label>
-                                                        </div>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox"><i class="fa fa-fw fa-male"></i>Asistente
-                                                            </label>
-                                                        </div>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox"><i class="fa fa-fw fa-child"></i>Invitado
-                                                            </label>
-                                                        </div>
+                                                        <select class="form-control"  ng-model="newForo.period">
+                                                            <option selected ><i class="fa fa-fw fa-user"></i>Estudiante</option>
+                                                            <option><i class="fa fa-fw fa-male"></i>Asistente</option>
+                                                            <option><i class="fa fa-fw fa-child"></i>Invitado</option>
+                                                        </select>
                                                     </div>
                                                     
                                                 </li>
@@ -529,8 +508,7 @@
     <!-- /#wrapper -->
 
     <!-- Angular -->
-    <script type="text/javascript" src="js/angular.min.js"></script>
-
+    <script src="js/angular.min.js"></script>
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
 
