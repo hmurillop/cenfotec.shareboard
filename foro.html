@@ -225,7 +225,7 @@
                                 <h3 class="panel-title"><i class="fa fa-fw fa-plus"></i>Crear foro</h3>
                             </div>
                             <div class="panel-body">
-                                <form role="form">
+                                <form role="form" ng-submit="createNewForo()">
                                         
                                             <div class="form-group">
                                                 <label>Carrera</label>
@@ -277,6 +277,7 @@
                                                 <input type="text" class="form-control">
                                                 <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-fw fa-search"></i></button></span>
                                             </div>
+
                                             <ul class="list-group">
                                                 <li class="list-group-item">
                                                     <div class="form-group">
@@ -288,8 +289,6 @@
                                                             <option><i class="fa fa-fw fa-child"></i>Invitado</option>
                                                         </select>
                                                     </div>
-                                                        
-                                                    
                                                 </li>
                                                 <li class="list-group-item">
                                                     <div class="form-group">
@@ -301,7 +300,6 @@
                                                             <option><i class="fa fa-fw fa-child"></i>Invitado</option>
                                                         </select>
                                                     </div>
-                                                    
                                                 </li>
                                                 <li class="list-group-item">
                                                     <div class="form-group">
@@ -322,17 +320,16 @@
                                                                 <input type="checkbox"><i class="fa fa-fw fa-child"></i>Invitado
                                                             </label>
                                                         </div>
-                                                    </div>
-                                                    
+                                                    </div>  
                                                 </li>
                                             </ul>
                                             <div class="form-group">
                                                 <label>Usuarios visibles</label>
                                                 <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>Si
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" ng-model="visibility" value="true" checked>Si
                                                 </label>
                                                 <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">No
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" ng-model="visibility" value="false">No
                                                 </label>
                                             </div>
                                             <button type="submit" class="btn btn-sm btn-success">Crear nuevo foro</button>
