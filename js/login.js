@@ -1,9 +1,11 @@
 (function(){
 
 	var app = angular.module('login', []);
-    var pagina='blog.html';
+    var pagina = 'blog.html';
 
     app.controller('LoginController', ['$scope', '$http', function($scope, $http){
+       	
+
        $http.get('').success(function(data){
 
        	$scope.users = data;
@@ -16,11 +18,13 @@
        		if($scope.users[i].email == login.email && $scope.users[i].password == login.password){
        			redireccionar();
        		};
-       	}
-       }
+       	};
+       };
 
        function redireccionar(){
        	location.href = pagina
-       }
+       };
     }])
+
+
 })();
