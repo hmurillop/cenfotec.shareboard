@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="sharedboard">
 
 <head>
 
@@ -222,7 +222,7 @@
 
                         <div class="panel panel-success" ng-show="false" ng-controller="foroMakerController">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-fw fa-plus"></i>Crear foro</h3>
+                                <h3 class="panel-title"><i class="fa fa-fw fa-plus"></i>Crear foro {{3+1}}</h3>
                             </div>
                             <div class="panel-body">
                                 <form role="form" ng-submit="createNewForo()">
@@ -504,8 +504,14 @@
     </div>
     <!-- /#wrapper -->
 
+    
+
     <!-- Angular -->
     <script src="js/angular.min.js"></script>
+
+    <!-- Logica -->
+    <script src="js/app.js"></script> 
+
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
 
