@@ -4,33 +4,17 @@
 
 
 
-function ObtenerEntradaPorId(){
+function ObtenerEntradaPorId($idBlog){
 
-include('blog_ad.php');//Incluye el archivo de conexion a base de datos
-$blog = new blog_ad();			
-$Obj_respuesta=$blog->ObtenerEntradaBlogPorId(1);
-
+	include('../cad/blog_ad.php');//Incluye el archivo de conexion a base de datos
+	$blog = new blog_ad();			
+	$datosPublicacion=$blog->ObtenerPublicacionBlogPorId($idBlog);
+	$comentariosPublicacion=$blog->ObtenerComentariosPublicacionBlog($idBlog);
+	//$datosPublicacion[count($datosPublicacion)]={"comentarios"=$comentariosPublicacion	};
+	$datosPublicacion['comentarios']= $comentariosPublicacion	;
+	echo json_encode($datosPublicacion);
 }
 
-function test(){
-$conexion = mysql_connect('27.0.0.1','root','root')
-	or die("no se puede seleccionar la base de datos");
-	
-	
-    mysql_select_db("bdshareboard")
-	or die ("No conecto esa base de datos");
-	
-	$consulta =mysql_query("SELECT * FROM tbpublicaionesblog ", $conexion);
-	$nfilas = mysql_num_rows ($consulta);
-	
-	if($nfilas>0){
-	  for($i=0; $i < $nfilas; $i++){
-        $fila = mysql_fetch_array($consulta);
-        print "Entrada :".$fila["entrada"]."<br/>";		
-	  }
-	}
-}
-
-test();
+ObtenerEntradaPorId(1);
 ?>
 

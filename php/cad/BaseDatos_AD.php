@@ -66,7 +66,7 @@ class BaseDatos_AD{
 	
 	/** Metodo utilizado como constructor de la clase*/
 	public function BaseDatos_AD() {	
-		include('./simotrav_files/shareboardINI.php');//Incluye el archivo de inicio con los parametros de conexion
+		include('shareboardINI.php');//Incluye el archivo de inicio con los parametros de conexion
 		//Setea los atributos de la clase con los datos contenidos en el archivo de inicio
 		$this->setServidor($Servidor);
 		$this->setUsuario($Usuario);
@@ -77,7 +77,14 @@ class BaseDatos_AD{
 	/** Metodo utilizado para establecer la conexion con el servidor*/
 	public function Conectar(){
 		try{
-			return mysqli_connect($this->Str_Servidor,$this->Str_Usuario,$this->Str_Clave,$this->Str_BaseDatos);		
+			//return mysqli_connect($this->Str_Servidor,$this->Str_Usuario,$this->Str_Clave,$this->Str_BaseDatos);		
+			$conexion = mysql_connect('127.0.0.1','root','root')
+	or die("no se puede seleccionar la base de datos");
+	//mysqli_select_db($conexion,"bdshareboard")
+	mysql_select_db("bdshareboard",$conexion)
+	or die ("No conecto esa base de datos");
+		return $conexion;
+		
 		}
 		catch(Exception $ERROR){
 			throw new Exception('No se puedo establecer la conexión con el servidor.');
@@ -89,7 +96,8 @@ class BaseDatos_AD{
 	public function SQLQuery($Obj_Conexion,$Str_QUERY){
 		try{
 			//$this->EnlaceBD();//Establece la base de datos
-			return mysqli_query($Obj_Conexion,$Str_QUERY);//Retorna el resultado de la consulta
+			//return mysqli_query($Obj_Conexion,$Str_QUERY);//Retorna el resultado de la consulta
+			return mysql_query($Str_QUERY,$Obj_Conexion);//Retorna el resultado de la consulta
 		}
 		catch(Exception $ERROR){
 			throw new Exception('No se pudo realizar la operación en la base de datos.');
@@ -99,7 +107,7 @@ class BaseDatos_AD{
 	/** Metodo utilizado para liberar la memoria*/
 	public function FreeMem($Obj_resultado){
 		try{
-			mysqli_free_result($Obj_resultado);//Libera la memoria utilizada por la consulta
+			//mysql_free_result($Obj_resultado);//Libera la memoria utilizada por la consulta
 		}
 		catch(Exception $ERROR){
 			throw new Exception('No se pudo cerrar correctamente la conexión con el servidor.');
@@ -109,7 +117,7 @@ class BaseDatos_AD{
 	/** Metodo utilizado para cerrar la conexion con el servidor*/
 	public function Cerrar($Obj_conexion){
 		try{
-			mysqli_close($Obj_conexion);
+			mysql_close($Obj_conexion);
 		}
 		catch(Exception $ERROR){
 			throw new Exception('No se pudo cerrar correctamente la conexión con el servidor.');
