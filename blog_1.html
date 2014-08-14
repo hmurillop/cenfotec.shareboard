@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="sharedboard">
 
 <head>
 
@@ -31,16 +31,16 @@
     <![endif]-->
 
     <!-- Angular -->
-    <script src="js/angular.min.js"></script>
+    <!-- <script src="js/angular.min.js"></script> -->
 
     <!-- Logica -->
-    <script src="js/app.js"></script>
+    <!-- <script src="js/app.js"></script> -->
 
 </head>
 
 <body>
 
-    <div id="wrapper">
+    <div id="wrapper"  ng-controller="StoreController as store">
 
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -166,15 +166,15 @@
                             </div>
                             <div class="panel-body">
                                 
-                                <form role="form">
+                              <form role="form" name="entryForm" ng-controller="entryController as entryCtrl" ng-submit="entryForm.$valid && entryCtrl.addentry(store.blog)" ng-show="store.blog.isOwner">
 
 
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Título">
+                                        <input class="form-control" placeholder="Título" ng-model="entryCtrl.newEntry.title">
                                     </div>
 
                                     <div class="form-group">
-                                        <textarea class="form-control" placeholder="Texto" rows="3"></textarea>
+                                        <textarea class="form-control" placeholder="Texto" rows="3" ng-model="entryCtrl.newEntry.entry"></textarea>
                                     </div>
 
                                     <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-pencil"></i>Publicar</button>
@@ -182,6 +182,18 @@
                                 </form>
                                 <hr>
                                 <!-- First Blog Post -->
+								
+									<ul class="list-group">
+									   <li class="list-group-item" ng-repeat="blog in store.blog.entries" ng-show="blog.enable">
+											<button class="btn btn-default btn-xs"  ng-controller="entryController as entryCtrl" ng-click="entryCtrl.deleteEntry(blog)" >Eliminar</button>
+										   <h3 blog-title ></h3>              
+												  <div>
+														{{blog.entry}}						
+												  <div/>               
+											  <blog-panels></blog-panels>            
+									   </li>
+									</ul>
+								
                                 <div>
                                     <h2>
                                         <a href="#">Título del la publicación</a>
@@ -264,6 +276,16 @@
     <!-- /#wrapper -->
 
     <!-- jQuery Version 1.11.0 -->
+	   <!-- Angular -->
+    <script src="js/angular.min.js"></script>
+
+    <!-- Logica -->
+    <script src="js/app.js"></script>
+	
+	<!-- blog -->
+	<script src="js/blogs.js"></script>
+	<script src="js/blogController.js"></script>
+	
     <script src="js/jquery-1.11.0.js"></script>
 
     <!-- Bootstrap Core JavaScript -->

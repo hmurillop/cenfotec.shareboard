@@ -1,0 +1,37 @@
+{
+    "0": {
+        "IdPublicacionesBlog": "1",
+        "IdBlog": "1",
+        "titulo": "Lrem Ipsum",
+        "entrada": "Blandit incorrupte quaerendum in quo, nibh impedit id vis, vel no nullam semper audiam. Ei populo graeci consulatu mei, has ea stet modus phaedrum. Inani oblique ne has, duo et veritus detraxit. Tota ludus oratio ea mel, offendit persequeris ei vim. Eos dicat oratio partem ut, id cum ignota senserit intellegat. Sit inani ubique graecis ad, quando graecis liberavisse et cum, dicit option eruditi at duo. Homero salutatus suscipiantur eum id, tamquam voluptaria expetendis ad sed, nobis feugiat similique usu ex",
+        "hora": "20:39:25",
+        "fecha": "2014-08-12",
+        "denunciar": "0"
+    },
+    "comentarios": [
+        {
+            "IdComentariosBlog": "1",
+            "IdPublicacionesBlog": "1",
+            "comentario": "Lrem Blandit incorrupte quaerendum in quo, nibh impedit id vis",
+            "fecha": "2014-08-12",
+            "hora": "22:37:47",
+            "denunciar": "0"
+        },
+        {
+            "IdComentariosBlog": "2",
+            "IdPublicacionesBlog": "1",
+            "comentario": "graecis ad, quando graecis liberavisse et cum",
+            "fecha": "2014-08-12",
+            "hora": "22:39:19",
+            "denunciar": "0"
+        },
+        {
+            "IdComentariosBlog": "3",
+            "IdPublicacionesBlog": "1",
+            "comentario": "quaerendum in quo, nibh impedit id vis, vel no nullam semper audiam. Ei populo graeci consulatu mei",
+            "fecha": "2014-08-12",
+            "hora": "22:39:40",
+            "denunciar": "0"
+        }
+    ]
+}
