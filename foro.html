@@ -38,7 +38,7 @@
 
 </head>
 
-<body>
+<body ng-controller="generalForoCtrl">
 
     <div id="wrapper">
 
@@ -109,9 +109,9 @@
 
                 <div class="col-sm-12">
                         <button type="button" class="btn btn-success"><i class="fa fa-fw fa-search"></i>Buscar Foro</button>
-                        <button type="button" class="btn btn-success"><i class="fa fa-fw fa-plus"></i>Nuevo foro</button>
+                        <button type="button" class="btn btn-success" ng-click="showFormAddForo()"><i class="fa fa-fw fa-plus"></i>Nuevo foro</button>
                         <button type="button" class="btn btn-success"><i class="fa fa-fw fa-pencil"></i>Editar foro</button>
-                        <button type="button" class="btn btn-success"><i class="fa fa-fw fa-plus"></i>Nuevo tema</button>
+                        <button type="button" class="btn btn-success" ng-click="showFormAddPost()"><i class="fa fa-fw fa-plus"></i>Nuevo tema</button>
                         <button type="button" class="btn btn-success"><i class="fa fa-fw fa-group"></i>Integrantes</button>
                         <hr>
                 </div>
@@ -226,7 +226,7 @@
                             </div>
                         </div>
 
-                        <div class="panel panel-success" ng-show="true" ng-controller="foroMakerCtrl">
+                        <div class="panel panel-success" ng-show="flag1" ng-controller="foroMakerCtrl">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-fw fa-plus"></i>Crear foro{{4+1}}</h3>
                             </div>
@@ -359,7 +359,7 @@
                             </div>
                             <div class="panel-body">
 
-                                <form role="form">
+                                <form role="form" ng-show="flag">
 
 
                                     <div class="form-group">
@@ -371,9 +371,9 @@
                                     </div>
 
                                     <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-pencil"></i>Publicar</button>
-
-                                </form>
                                 <hr>
+                                </form>
+                                
                                 
                                 <!-- Foro Post -->
 

@@ -18,6 +18,27 @@
 	         
 
     }]);
+
+    app.controller('generalForoCtrl', ['$scope', function($scope) {
+
+    	$scope.flag= false;
+    	$scope.flag1= false;
+
+    	$scope.showFormAddPost = function(){
+    		$scope.flag= true;
+    	}
+
+    	$scope.showFormAddForo = function(){
+    		$scope.flag1= true;
+    	}
+
+   
+	         
+
+    }]);
+
+
+
     
 
     
