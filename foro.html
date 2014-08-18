@@ -231,51 +231,51 @@
                                 <h3 class="panel-title"><i class="fa fa-fw fa-plus"></i>Crear foro{{4+1}}</h3>
                             </div>
                             <div class="panel-body">
-                                <form role="form" ng-submit="createNewForo()">
+                                <form role="form" ACTION="php/foro/createForo.php" METHOD="POST" ng-submit="createNewForo()">
                                         
                                             <div class="form-group">
                                                 <label>Carrera</label>
-                                                <select class="form-control" ng-model="newForo.major">
-                                                    <option selected >Desarrollo y diseño web</option>
-                                                    <option>Desarrollo de software</option>
-                                                    <option>Redes</option>
+                                                <select name="carrera" class="form-control" ng-model="newForo.major">
+                                                    <option selected value="Desarrollo y diseño web" >Desarrollo y diseño web</option>
+                                                    <option value="Desarrollo de software">Desarrollo de software</option>
+                                                    <option value="Redes">Redes</option>
                                                 </select>
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Curso</label>
-                                                <select class="form-control"  ng-model="newForo.subject">
-                                                    <option selected >Proyecto 1</option>
-                                                    <option>Bases de datos</option>
-                                                    <option>Programación 1</option>
+                                                <select name="curso" class="form-control"  ng-model="newForo.subject">
+                                                    <option selected value="Proyecto 1" >Proyecto 1</option>
+                                                    <option value="Bases de datos">Bases de datos</option>
+                                                    <option value="Programación 1">Programación 1</option>
                                                 </select>
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Periodo</label>
-                                                <select class="form-control"  ng-model="newForo.period">
-                                                    <option selected >Primer Cuatrimestre</option>
-                                                    <option>Segundo Cuatrimestre</option>
-                                                    <option>Tercer Cuatrimestre</option>
+                                                <select name="periodo" class="form-control"  ng-model="newForo.period">
+                                                    <option selected value="Primer Cuatrimestre">Primer Cuatrimestre</option>
+                                                    <option value="Segundo Cuatrimestre">Segundo Cuatrimestre</option>
+                                                    <option value="Tercer Cuatrimestre">Tercer Cuatrimestre</option>
                                                 </select>
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Profesor</label>
-                                                <select class="form-control"  ng-model="newForo.professor">
-                                                    <option selected >Alvaro Cordero</option>
-                                                    <option>Alonso Guevara</option>
-                                                    <option>Pablo Monestel</option>
+                                                <select name="profesor" class="form-control"  ng-model="newForo.professor">
+                                                    <option selected value="Alvaro Cordero">Alvaro Cordero</option>
+                                                    <option value="Alonso Guevara">Alonso Guevara</option>
+                                                    <option value="Pablo Monestel">Pablo Monestel</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label>Fecha de cierre:</label>
-                                                <input  class="form-control" type="date"  ng-model="newForo.closeDate" required/>
+                                                <input name="fechaCierre"  class="form-control" type="date"  ng-model="newForo.closeDate" required/>
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Hora de cierre</label>
-                                                <input  class="form-control" type="time" ng-model="newForo.closeHour" required/>
+                                                <input name="horaCierre"  class="form-control" type="time" ng-model="newForo.closeHour" required/>
                                             </div>
                                             <label>Miembros</label>
 
