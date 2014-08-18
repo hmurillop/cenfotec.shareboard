@@ -1,10 +1,5 @@
 (function(){
 
-	var app = angular.module('sharedboard', []);
-    
-
-    
-
-
+	var app = angular.module('sharedboard', ['store']);
 
 })();

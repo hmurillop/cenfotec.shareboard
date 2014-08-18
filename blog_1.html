@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- <html lang="en" ng-app="sharedboard"> -->
+ <html lang="en" ng-app="sharedboard"> 
 
 <head>
 
@@ -7,10 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="jacquelineRoman" content="">
 
     <title>SharedBoard App</title>
-
+ 
+ <!-- ng-controller="StoreController as store" -->
+ 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -32,7 +35,7 @@
 
 </head>
 
-<body>
+<body ng-controller="StoreController as store">
 
     <div id="wrapper">
 
@@ -154,21 +157,21 @@
                         </div>
                     </div>
                     <div class="col-lg-8">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Blog</h3>
-                            </div>
-                            <div class="panel-body">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h3 class="panel-title">Blog</h3>
+						</div>
+						<div class="panel-body">
                                 
-                                <form role="form">
-
+                                <!-- <form role="form" name="entryForm" ng-controller="entryController as entryCtrl" ng-submit="entryForm.$valid && entryCtrl.addentry(store.blog)" ng-show="store.blog.isOwner"> -->
+								<form role="form" name="entryForm" ng-controller="entryController as entryCtrl" ng-submit="entryForm.$valid && entryCtrl.addentry(store.blog)">
 
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Título">
+                                        <input class="form-control" placeholder="Título" ng-model="entryCtrl.newEntry.title">
                                     </div>
 
                                     <div class="form-group">
-                                        <textarea class="form-control" placeholder="Texto" rows="3"></textarea>
+                                        <textarea class="form-control" placeholder="Texto" rows="3" ng-model="entryCtrl.newEntry.entry"></textarea>
                                     </div>
 
                                     <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-pencil"></i>Publicar</button>
@@ -176,6 +179,18 @@
                                 </form>
                                 <hr>
                                 <!-- First Blog Post -->
+								<ul class="list-group">
+		   <li class="list-group-item" ng-repeat="blog in store.blog" ng-show="blog.enable"> 
+		   <!-- <li class="list-group-item" ng-repeat="blog in store.blog" > -->
+				<!-- <button class="btn btn-default btn-xs"  ng-controller="entryController as entryCtrl" ng-click="entryCtrl.deleteEntry(blog)" >Eliminar</button> -->
+			   <h3 blog-title ></h3>              
+					  <div>							
+							{{blog.entrada}}						
+					  <div/>               
+				  <blog-panels></blog-panels>            
+		   </li> 
+		</ul>
+								
                                 <div>
                                     <h2>
                                         <a href="#">Título del la publicación</a>
@@ -193,6 +208,8 @@
                                 </div>
 
                                 <!-- Second Blog Post -->
+								
+								<!-- 
                                 <div>
                                     <hr>
                                     <h2>
@@ -207,10 +224,13 @@
                                     <p><span class="glyphicon glyphicon-time"></span> Publicado en Agosto 28, 2014 hora 10:00 PM</p>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
                                     <a class="btn btn-success" href="#">Leer más <span class="glyphicon glyphicon-chevron-right"></span></a>
-
+								
                                 </div>
+								 -->
+								 
                                 <!-- Third Blog Post -->
-                                <div>
+                                
+								<!-- <div> 
                                     <hr>
                                     <h2>
                                         <a href="#">Título del la publicación</a>
@@ -225,10 +245,10 @@
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
                                     <a class="btn btn-success" href="#">Leer más <span class="glyphicon glyphicon-chevron-right"></span></a>
 
-                                </div>
+                                </div>-->
+								
 
-
-                            </div>
+                            <!-- </div> -->
                         </div>
                     
                     </div>
@@ -256,6 +276,11 @@
 
     </div>
     <!-- /#wrapper -->
+	<!-- blog -->
+	<script src="js/angular.min.js"></script>
+	<script src="js/blogs.js"></script>
+	<script src="js/blogController.js"></script>
+	<script src="js/app.js"></script>
 
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
