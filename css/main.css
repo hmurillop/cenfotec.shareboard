@@ -3,10 +3,11 @@ html {
   height: 100%;
   @font-face {
     font-family: 'HelveticaNeueLTStd-Roman';
-    font-style: normal;
+    font-style: bold;/*normal*/
     font-weight: normal;
     src: local("HelveticaNeueLTStd-Roman"), url(fonts/HelveticaNeueLTStd-Roman.otf);
 }
+
 
 }
 /* line 11, ../scss/main.scss */
