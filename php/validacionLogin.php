@@ -7,18 +7,19 @@
 
 	$data = file_get_contents("php://input");
     
-	$objData = json_encode($data);
-	
+	$objData = json_decode($data);
+	$objData = $objData->data;
 
 	$consulta  = mysql_query('SELECT * FROM  tbusuario WHERE email ="'. $objData->email .'" && contrasenna = "'.$objData->contrasenna.'";', $conexion);
-    $validacion = is_string($consulta);
-    print $validacion;
+    $validacion =is_resource($consulta);
 
-    if($validacion === true){
-    echo header ("Location: ../blog_1.html");
-    }
-    else{
-     	print 'Error';
-     }
+    var_dump($validacion);
+
+    // if($validacion === true){
+    //    header ("Location: ../blog_1.html");
+    // }
+    // else{
+    //  	print 'Error';
+    //  }
 	
 ?>
