@@ -33,11 +33,11 @@
 
     <!-- Logica -->
     <script src="js/app.js"></script>
-    <!-- // <script src="js/doc.a.js"></script> -->
+    <script src="js/doc.a.js"></script>
 
 </head>
 
-<body>
+<body ng-controller="DocNavCtrl">
     <div id="wrapper">
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -103,16 +103,14 @@
 
                 <div class="row">
                     <div class="col-sm-12 ">
-                        <button type="button" class="btn btn-success"><i class="fa fa-fw fa-search"></i>Buscar documento</button>
-                        <button type="button" class="btn btn-success"><i class="fa fa-fw  fa-upload"></i>Subir documento</button>
+                        <button ng-click="selectTab(1)" type="button" class="btn btn-success"><i class="fa fa-fw fa-search"></i>Buscar documento</button>
+                        <button ng-click="selectTab(2)" type="button" class="btn btn-success"><i class="fa fa-fw  fa-upload"></i>Subir documento</button>
                         <hr>
                     </div>
+                    <div class="col-sm-4">                      
 
-                    <div class="col-sm-4">
-                        
-
-                                        <!-- Busqueda de Documento -->
-                <div class="panel panel-success">
+                <!-- Busqueda de Documento -->
+                <div ng-show="tabSelected(1)" class="panel panel-success">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Buscar documento</h3>
                             </div>
@@ -151,7 +149,7 @@
                             </div>
                         </div>
 
-                        <div class="panel panel-success">
+                        <div ng-show="tabSelected(2)" class="panel panel-success">
                         <div class="panel-heading">
                                 <h3 class="panel-title">Subir documento</h3>
                             </div>
@@ -194,7 +192,7 @@
                                 </form>
                             </div>  
                             </div>
-
+    
 
                     <!-- Subir documento -->
                     </div>
@@ -226,8 +224,11 @@
 
                                 <hr>
                                 <div class="row text-center">
-                                <iframe src="http://docs.google.com/gview?url=http://example.com/mypdf.pdf&embedded=true" style="width:718px; height:700px;" frameborder="0"></iframe>
-                                </div>
+<!--                                 <iframe src="http://docs.google.com/viewer?url=http%3A%2F%2Flocalhost%2Fcenfotec.shareboard%2Fdocs%2Ftema4.pdf&embedded=true" width="600" height="780" style="border: none;"></iframe> -->
+
+<object id="myPdf" type="application/pdf" data="http://localhost/cenfotec.shareboard/docs/tema4.pdf" width="400" height="400" >
+                                <!-- <iframe src="http://docs.google.com/gview?url=http://example.com/mypdf.pdf&embedded=true" style="width:718px; height:700px;" frameborder="0"></iframe>
+ -->                                </div>
 
                                 </div>
 
