@@ -11,15 +11,9 @@
 	$objData = $objData->data;
 
 	$consulta  = mysql_query('SELECT * FROM  tbusuario WHERE email ="'. $objData->email .'" && contrasenna = "'.$objData->contrasenna.'";', $conexion);
-    $validacion =is_resource($consulta);
+    $validacion =  mysql_num_rows($consulta) == 1;
 
-    var_dump($validacion);
+     echo $validacion;
 
-    // if($validacion === true){
-    //    header ("Location: ../blog_1.html");
-    // }
-    // else{
-    //  	print 'Error';
-    //  }
 	
 ?>
