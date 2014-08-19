@@ -1,15 +1,14 @@
 (function() {
 
-    
-	var app = angular.module('store', ['store-blogs', 'modalTest','main']);
-    
+    var app = angular.module('store', ['store-blogs']);
+    // angular.module('blog', ['store-blogs', 'modalTest','main']);
 
-    app.controller('StoreController', ['$http',
+   /* app.controller('StoreController', ['$http',
         function($http) {
             var store = this;
 
             store.blog = [];
-
+			
             $http.get('blogs.json').success(function(data) { // el get hay que asignarle la ruta del documento de JSon para que aceda
                 store.blog = data;
             });
@@ -17,7 +16,7 @@
 	
 		
     ]);
-
+*/
     app.controller("entryController", function() {
         this.entry = {};
 
@@ -46,10 +45,32 @@
 			comment.enable=false;
         };
 		
-		
-		
     });
 
+	app.controller('StoreController', ['$http',
+        function($http) {
+            var store = this;
 
-
-})();
+            //store.blog = [];
+			
+            /*$http.get('blogs.json').success(function(data) { // el get hay que asignarle la ruta del documento de JSon para que aceda
+                store.blog = data;
+            });*/
+			$http.post('ln/blog_ln.php?accion=obtenerPublicacionPorUsuario', { "data" : ''}).
+				success(function(data, status) {
+					/*$scope.status = status;
+					$scope.data = data;
+					$scope.result = data; // Show result from server in our <pre></pre> element*/
+					//alert(angular.toJson(data));
+					//store.blog=angular.toJson(data);
+					store.blog=data;
+				}).
+				error(function(data, status) {
+					$scope.data = data || "Request failed";
+					$scope.status = status;			
+				});
+        }
+	
+		
+    ]);
+})(); 

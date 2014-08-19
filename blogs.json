@@ -1,37 +1,91 @@
-{
-    "0": {
-        "IdPublicacionesBlog": "1",
-        "IdBlog": "1",
-        "titulo": "Lrem Ipsum",
-        "entrada": "Blandit incorrupte quaerendum in quo, nibh impedit id vis, vel no nullam semper audiam. Ei populo graeci consulatu mei, has ea stet modus phaedrum. Inani oblique ne has, duo et veritus detraxit. Tota ludus oratio ea mel, offendit persequeris ei vim. Eos dicat oratio partem ut, id cum ignota senserit intellegat. Sit inani ubique graecis ad, quando graecis liberavisse et cum, dicit option eruditi at duo. Homero salutatus suscipiantur eum id, tamquam voluptaria expetendis ad sed, nobis feugiat similique usu ex",
-        "hora": "20:39:25",
-        "fecha": "2014-08-12",
-        "denunciar": "0"
-    },
-    "comentarios": [
-        {
-            "IdComentariosBlog": "1",
-            "IdPublicacionesBlog": "1",
-            "comentario": "Lrem Blandit incorrupte quaerendum in quo, nibh impedit id vis",
-            "fecha": "2014-08-12",
-            "hora": "22:37:47",
-            "denunciar": "0"
-        },
-        {
-            "IdComentariosBlog": "2",
-            "IdPublicacionesBlog": "1",
-            "comentario": "graecis ad, quando graecis liberavisse et cum",
-            "fecha": "2014-08-12",
-            "hora": "22:39:19",
-            "denunciar": "0"
-        },
-        {
-            "IdComentariosBlog": "3",
-            "IdPublicacionesBlog": "1",
-            "comentario": "quaerendum in quo, nibh impedit id vis, vel no nullam semper audiam. Ei populo graeci consulatu mei",
-            "fecha": "2014-08-12",
-            "hora": "22:39:40",
-            "denunciar": "0"
-        }
-    ]
-}
+{"isOwner":true,
+"entries":[{
+	"id":3,
+    "title": "uno de piera - Tutoriales de programación web",
+    "entry":"Tutoriales de programación web",
+    "enable":true,
+    "comentarios":[{ "usuario":"rudy",
+								"comentario":"muy bueno siga asi",								
+								"enable":true
+							},{
+								"usuario":"jaky",
+								"comentario":"no me gusto pesimo",
+								"enable":true
+							},{
+								"usuario":"juan",
+								"comentario":"no me gusto pesimo",
+								"enable":true
+							},{
+								"usuario":"ana",
+								"comentario":"no me gusto pesimo",
+								"enable":true
+							}]
+   
+}, {
+	"id":4,
+     "title": "Shakespeare",
+    "entry":"esta es una prueba de especies de dino saurios que estamos probando en la eenmtada.",
+    "enable":true,
+	"comentarios":[{ "usuario":"adrian",
+								"comentario":"muy bueno siga asi"	,							
+								"enable":true
+							},{
+								"usuario":"david",
+								"comentario":"no me gusto pesimo",
+								"enable":true
+							},{
+								"usuario":"kevin",
+								"comentario":"no me gusto pesimo",
+								"enable":true
+							}]
+}, {
+      "title": "Futol amor y pasion",
+    "entry":"esta es una prueba de especies de dino saurios que estamos probando en la eenmtada.",
+    "enable":true,
+	"comentarios":[{ "usuario":"diego",
+								"comentario":"muy bueno siga asi"	,							
+								"enable":true
+							},{
+								"usuario":"hector",
+								"comentario":"no me gusto pesimo",
+								"enable":true
+							},{
+								"usuario":"lizeth",
+								"comentario":"no me gusto pesimo",
+								"enable":true
+							}]
+}, {
+	"id":6,
+     "title": "Dinosaurios",
+    "entry":"esta es una prueba de especies de dino saurios que estamos probando en la eenmtada.",
+    "enable":true,
+	"comentarios":[{ "usuario":"adrian",
+								"comentario":"muy bueno siga asi"	,							
+								"enable":true
+							},{
+								"usuario":"david",
+								"comentario":"no me gusto pesimo",
+								"enable":true
+							},{
+								"usuario":"kevin",
+								"comentario":"no me gusto pesimo",
+								"enable":true
+							}]
+}, {
+	"id":1,
+      "title": "Ciencia y tecnologia",
+    "entry":"esta es una prueba de especies de dino saurios que estamos probando en la eenmtada.",
+    "enable":true,
+	"comentarios":[{ "usuario":"diego",
+								"comentario":"muy bueno siga asi"	,							
+								"enable":true
+							},{
+								"usuario":"hector",
+								"comentario":"no me gusto pesimo",
+								"enable":true
+							},{
+								"usuario":"lizeth",
+								"comentario":"no me gusto pesimo",
+								"enable":true
+							}]
+}]}
