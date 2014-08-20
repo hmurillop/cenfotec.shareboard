@@ -1,7 +1,7 @@
 (function(){
 
-	var app = angular.module('sharedboard', ['store']);
-
+	var app = angular.module('sharedboard', []);
+/*
 	// blog
 	
     app.controller('StoreController', ['$http',
@@ -14,7 +14,6 @@
                 store.blog = data;
             });
         }
-	
 		
     ]);
 
@@ -45,13 +44,11 @@
 		this.deleteComment = function(comment) {
 			comment.enable=false;
         };
-		
-		
-		
+			
     });
 
 	// fin
-
+*/
     app.controller('foroMakerCtrl', ['$scope', function($scope) {
         	$scope.master = {};
         	$scope.update = function(foro) {
