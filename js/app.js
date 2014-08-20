@@ -1,6 +1,6 @@
 (function(){
 
-	var app = angular.module('sharedboard', []);
+	var app = angular.module('sharedboard', ['store']);
 
     app.controller('foroMakerCtrl', ['$scope', function($scope) {
         	$scope.master = {};

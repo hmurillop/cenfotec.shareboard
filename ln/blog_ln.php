@@ -15,15 +15,25 @@ function ObtenerPublicacionBlogPorId($idBlog){
 	return json_encode($datosPublicacion);
 }
 */
-function ObtenerPublicacionBlogPorIdUsuario($idBlog){
+function ObtenerPublicacionBlogPorIdUsuario($idUsuario){
 	include('../cad/blog_ad.php');//Incluye el archivo de conexion a base de datos
 	$blog = new blog_ad();			
-	$datosPublicacion=$blog->ObtenerPublicacionBlogPorIdUsuario($idBlog);
+	$datosPublicacion=$blog->ObtenerPublicacionBlogPorIdUsuario($idUsuario);
+
+		foreach ($datosPublicacion as &$publicacion) {
+			//echo $publicacion["IdPublicacionesBlog"];
+			$publicacion["comentario"]=$blog->ObtenerComentariosPublicacionBlog($publicacion["IdPublicacionesBlog"]);	
+		}
+
+	
 	//$comentariosPublicacion=$blog->ObtenerComentariosPublicacionBlog($idBlog);
 	//$datosPublicacion['comentarios']= $comentariosPublicacion	;
 	//return json_encode($datosPublicacion);
 	echo json_encode($datosPublicacion);
 }
+
+
+
 $accion = $_REQUEST['accion'];
 
 switch ($accion ) {

@@ -45,16 +45,16 @@ class blog_ad{
 			throw $ERROR;		
 		}	
 	}
-	/*
+	
 	public function ObtenerComentariosPublicacionBlog($id){		
 	
 		try{			
-				if(!Obj_BD){				
+				if(!$this->Obj_BD){				
 					include('BaseDatos_AD.php');//Incluye el archivo de conexion a base de datos			
 					$this->Obj_BD = new BaseDatos_AD();						
 				}
-				//$Str_Query = 'select * from tbcomentariosblog where IdPublicacionesBlog='.$id.';'					
-				$Str_Query = 'select * from tbcomentariosblog where IdPublicacionesBlog=1;'		
+				$Str_Query = 'select * from tbcomentariosblog where IdPublicacionesBlog='.$id.';'	;			
+				//$Str_Query = 'select * from tbcomentariosblog where IdPublicacionesBlog=1;'		
 				
 				$conexion = $this->Obj_BD->Conectar();		
 				$resultado = $this->Obj_BD->SQLQuery($conexion,$Str_Query);				
@@ -75,7 +75,7 @@ class blog_ad{
 			throw $ERROR;		
 		}	
 	}
-*/
+
 	public function ObtenerPublicacionBlogPorIdUsuario($id){		
 		try{			
 				//if(!Obj_BD){				
