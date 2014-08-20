@@ -11,8 +11,8 @@
 	$objData = $objData->data;
 
 	$consulta  = mysql_query('SELECT * FROM  tbusuario WHERE email ="'. $objData->email .'" && contrasenna = "'.$objData->contrasenna.'";', $conexion);
-    $validacion =  mysql_num_rows($consulta) == 1;
-
+    $validacion =  mysql_num_rows($consulta) === 1;
+    
      echo $validacion;
 
 	
