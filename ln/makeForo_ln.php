@@ -15,10 +15,10 @@ function ObtenerPublicacionBlogPorId($idBlog){
 	return json_encode($datosPublicacion);
 }
 */
-function ObtenerPublicacionBlogPorIdUsuario($idBlog){
-	include('../cad/blog_ad.php');//Incluye el archivo de conexion a base de datos
-	$blog = new blog_ad();			
-	$datosPublicacion=$blog->ObtenerPublicacionBlogPorIdUsuario($idBlog);
+function obtenerListaCarrera($idBlog){
+	include('../cad/foro_ad.php');//Incluye el archivo de conexion a base de datos
+	$blog = new foro_ad();			
+	$datosPublicacion=$blog->obtenerListaCarrera($idBlog);
 	//$comentariosPublicacion=$blog->ObtenerComentariosPublicacionBlog($idBlog);
 	//$datosPublicacion['comentarios']= $comentariosPublicacion	;
 	//return json_encode($datosPublicacion);
@@ -27,9 +27,9 @@ function ObtenerPublicacionBlogPorIdUsuario($idBlog){
 $accion = $_REQUEST['accion'];
 
 switch ($accion ) {
-    case "obtenerPublicacion":
+    case "obtenerListaCarrera":
         //ObtenerPublicacionBlogPorId(1);
-		ObtenerPublicacionBlogPorIdUsuario(1);
+		obtenerListaCarrera(1);
         break;  
 	 case "obtenerPublicacionPorUsuario":
         ObtenerPublicacionBlogPorIdUsuario(1);
