@@ -14,6 +14,7 @@
                 store.blog = data;
             });
         }
+	
 		
     ]);
 
@@ -44,7 +45,9 @@
 		this.deleteComment = function(comment) {
 			comment.enable=false;
         };
-			
+		
+		
+		
     });
 
 	// fin
