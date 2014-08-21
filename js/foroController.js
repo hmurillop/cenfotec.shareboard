@@ -113,7 +113,37 @@
                     $scope.data = data || "Request failed";
                     $scope.status = status;         
                 });
-                
+
+
+            $http.post('ln/makeForo_ln.php?accion=obtenerListaProfesores', { "data" : ''}).
+                success(function(data, status) {
+                    /*$scope.status = status;
+                    $scope.data = data;
+                    $scope.result = data; // Show result from server in our <pre></pre> element*/
+                    //alert(angular.toJson(data));
+                    //store.blog=angular.toJson(data);
+                    store.foroProfesores=data;
+                }).
+                error(function(data, status) {
+                    $scope.data = data || "Request failed";
+                    $scope.status = status;         
+                });
+
+
+                $http.post('ln/makeForo_ln.php?accion=obtenerListaUsuarios', { "data" : ''}).
+                success(function(data, status) {
+                    /*$scope.status = status;
+                    $scope.data = data;
+                    $scope.result = data; // Show result from server in our <pre></pre> element*/
+                    //alert(angular.toJson(data));
+                    //store.blog=angular.toJson(data);
+                    store.foroUsuarios=data;
+                }).
+                error(function(data, status) {
+                    $scope.data = data || "Request failed";
+                    $scope.status = status;         
+                });
+
         }
 	
 		

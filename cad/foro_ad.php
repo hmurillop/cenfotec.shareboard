@@ -73,6 +73,62 @@ class foro_ad{
 			throw $ERROR;		
 		}	
 	}
+
+	public function obtenerListaProfesores(){		
+		try{			
+				//if(!Obj_BD){				
+					include('BaseDatos_AD.php');//Incluye el archivo de conexion a base de datos			
+					$this->Obj_BD = new BaseDatos_AD();						
+				//}
+			
+			$Str_Query = 'SELECT nombre, apellido1 FROM tbusuario WHERE IdRol = 4';	
+			$conexion = $this->Obj_BD->Conectar();		
+			$Obj_resultado = $this->Obj_BD->SQLQuery($conexion,$Str_Query);				
+			if(!$Obj_resultado){				
+			$Obj_respuesta = '<b>ERROR:</b> No se logro realizar la transaccion.<br><b>Detalle: </b>'.mysql_error();			
+			}else{									
+					$Int_Contador = 0;					
+					while($Obj_fila = mysql_fetch_assoc($Obj_resultado)){					
+						$Obj_respuesta[$Int_Contador] = $Obj_fila;					
+						$Int_Contador++;				
+					}
+			}			
+			$this->Obj_BD->FreeMem($Obj_resultado);			
+			$this->Obj_BD->Cerrar($conexion);						
+			return $Obj_respuesta;
+			
+		}catch (Exception $ERROR){			
+			throw $ERROR;		
+		}	
+	}
+
+	public function obtenerListaUsuarios(){		
+		try{			
+				//if(!Obj_BD){				
+					include('BaseDatos_AD.php');//Incluye el archivo de conexion a base de datos			
+					$this->Obj_BD = new BaseDatos_AD();						
+				//}
+			
+			$Str_Query = 'SELECT nombre, apellido1 FROM tbusuario';	
+			$conexion = $this->Obj_BD->Conectar();		
+			$Obj_resultado = $this->Obj_BD->SQLQuery($conexion,$Str_Query);				
+			if(!$Obj_resultado){				
+			$Obj_respuesta = '<b>ERROR:</b> No se logro realizar la transaccion.<br><b>Detalle: </b>'.mysql_error();			
+			}else{									
+					$Int_Contador = 0;					
+					while($Obj_fila = mysql_fetch_assoc($Obj_resultado)){					
+						$Obj_respuesta[$Int_Contador] = $Obj_fila;					
+						$Int_Contador++;				
+					}
+			}			
+			$this->Obj_BD->FreeMem($Obj_resultado);			
+			$this->Obj_BD->Cerrar($conexion);						
+			return $Obj_respuesta;
+			
+		}catch (Exception $ERROR){			
+			throw $ERROR;		
+		}	
+	}
 	/*
 	public function ObtenerComentariosPublicacionBlog($id){		
 	

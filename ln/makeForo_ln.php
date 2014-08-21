@@ -35,16 +35,41 @@ function obtenerListaCursos($idBlog){
 	echo json_encode($datosPublicacion);
 };
 
+function obtenerListaProfesores($idBlog){
+	include('../cad/foro_ad.php');//Incluye el archivo de conexion a base de datos
+	$blog = new foro_ad();			
+	$datosPublicacion=$blog->obtenerListaProfesores($idBlog);
+	//$comentariosPublicacion=$blog->ObtenerComentariosPublicacionBlog($idBlog);
+	//$datosPublicacion['comentarios']= $comentariosPublicacion	;
+	//return json_encode($datosPublicacion);
+	echo json_encode($datosPublicacion);
+};
+
+function obtenerListaUsuarios($idBlog){
+	include('../cad/foro_ad.php');//Incluye el archivo de conexion a base de datos
+	$blog = new foro_ad();			
+	$datosPublicacion=$blog->obtenerListaUsuarios($idBlog);
+	//$comentariosPublicacion=$blog->ObtenerComentariosPublicacionBlog($idBlog);
+	//$datosPublicacion['comentarios']= $comentariosPublicacion	;
+	//return json_encode($datosPublicacion);
+	echo json_encode($datosPublicacion);
+};
+
+
 $accion = $_REQUEST['accion'];
 
 switch ($accion ) {
     case "obtenerListaCarrera":
-        //ObtenerPublicacionBlogPorId(1);
 		obtenerListaCarrera(1);
         break;
     case "obtenerListaCursos":
-        //ObtenerPublicacionBlogPorId(1);
 		obtenerListaCursos(1);
+        break;
+    case "obtenerListaProfesores":
+		obtenerListaProfesores(1);
+        break;
+    case "obtenerListaUsuarios":
+		obtenerListaUsuarios(1);
         break;  		
     default:
         echo "Opcion invalida";
