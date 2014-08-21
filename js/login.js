@@ -26,9 +26,11 @@ function redireccionar(){
 
 $scope.recuperarPassword = function(){
    
-   $http.post($scope.lin, {"data": $scope.password}).success(function(data, status){
+   $http.post($scope.lin, {"datos": $scope.password})
+   .success(function(datos, status){
 
-         var recuperacion = $scope.data=data;
+         var recuperacion = $scope.datos=datos;
+         alert(recuperacion);
    })
 };
 }
