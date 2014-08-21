@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="sharedboard" >
+<html lang="en" ng-app="foro" >
 
 <head>
 
@@ -34,13 +34,13 @@
     <script src="js/angular.min.js"></script>
 
     <!-- Logica -->
-    <script src="js/app.js"></script> 
+     <script src="js/foroController.js"></script> 
 
 </head>
 
-<body ng-controller="generalForoCtrl">
+<body ng-controller="StoreController as store">
 
-    <div id="wrapper">
+    <div id="wrapper"  ng-controller="generalForoCtrl">
 
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
