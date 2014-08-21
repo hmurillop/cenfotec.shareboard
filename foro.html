@@ -30,11 +30,11 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-        <!-- Angular -->
+    <!-- Angular -->
     <script src="js/angular.min.js"></script>
 
     <!-- Logica -->
-     <script src="js/foroController.js"></script> 
+    <script src="js/foroController.js"></script> 
 
 </head>
 
@@ -236,9 +236,7 @@
                                             <div class="form-group">
                                                 <label>Carrera</label>
                                                 <select name="carrera" class="form-control" ng-model="newForo.major">
-                                                    <option selected value="Desarrollo y diseño web" >Desarrollo y diseño web</option>
-                                                    <option value="Desarrollo de software">Desarrollo de software</option>
-                                                    <option value="Redes">Redes</option>
+                                                    <option selected ng-repeat="carrera in store.foroCarreras" value="{{nombreCarrera}}" >{{nombreCarrera}}</option>
                                                 </select>
                                             </div>
 

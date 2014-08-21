@@ -23,16 +23,28 @@ function obtenerListaCarrera($idBlog){
 	//$datosPublicacion['comentarios']= $comentariosPublicacion	;
 	//return json_encode($datosPublicacion);
 	echo json_encode($datosPublicacion);
-}
+};
+
+function obtenerListaCursos($idBlog){
+	include('../cad/foro_ad.php');//Incluye el archivo de conexion a base de datos
+	$blog = new foro_ad();			
+	$datosPublicacion=$blog->obtenerListaCursos($idBlog);
+	//$comentariosPublicacion=$blog->ObtenerComentariosPublicacionBlog($idBlog);
+	//$datosPublicacion['comentarios']= $comentariosPublicacion	;
+	//return json_encode($datosPublicacion);
+	echo json_encode($datosPublicacion);
+};
+
 $accion = $_REQUEST['accion'];
 
 switch ($accion ) {
     case "obtenerListaCarrera":
         //ObtenerPublicacionBlogPorId(1);
 		obtenerListaCarrera(1);
-        break;  
-	 case "obtenerPublicacionPorUsuario":
-        ObtenerPublicacionBlogPorIdUsuario(1);
+        break;
+    case "obtenerListaCursos":
+        //ObtenerPublicacionBlogPorId(1);
+		obtenerListaCursos(1);
         break;  		
     default:
         echo "Opcion invalida";
