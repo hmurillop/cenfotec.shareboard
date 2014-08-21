@@ -1,7 +1,6 @@
 (function() {
 
     var app = angular.module('foro', []);
-
     // angular.module('blog', ['store-blogs', 'modalTest','main']);
 
    /* app.controller('StoreController', ['$http',
@@ -74,6 +73,8 @@
         }
 
     }]);
+
+
 
 	app.controller('StoreController', ['$http',
         function($http) {
