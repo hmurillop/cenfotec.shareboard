@@ -1,6 +1,6 @@
 (function() {
 
-    var app = angular.module('foro', []);
+    var app = angular.module('foro', ['ui.bootstrap']);
     // angular.module('blog', ['store-blogs', 'modalTest','main']);
 
    /* app.controller('StoreController', ['$http',
@@ -76,7 +76,7 @@
 
 
 
-	app.controller('StoreController', ['$http', function($http) {
+	app.controller('StoreController', ['$http', '$scope', function($http,$scope) {
             
             var store = this;
 

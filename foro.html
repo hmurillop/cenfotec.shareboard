@@ -32,9 +32,10 @@
 
     <!-- Angular -->
     <script src="js/angular.min.js"></script>
-
+    <script src="js/ui-bootstrap-tpls-0.11.0.min.js"></script> 
     <!-- Logica -->
     <script src="js/foroController.js"></script> 
+
 
 </head>
 
@@ -274,9 +275,10 @@
                                             <label>Miembros</label>
 
                                             <div class="form-group input-group">
-                                                <input type="text" typeahead="profesor for profesor in store.foroProfesores | filter:$viewValue | limitTo:8" class="form-control">
+                                                <input type="text" ng-model="selected" typeahead="nombre as profesor.nombre for profesor in store.foroProfesores | filter:{nombre:$viewValue}"  class="form-control">
                                                 <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-fw fa-search"></i></button></span>
                                             </div>
+                                            <pre>Model: {{selected | json}}</pre>
 
                                             <ul class="list-group">
                                                 <li class="list-group-item">
