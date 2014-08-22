@@ -5,9 +5,7 @@
 	mysql_select_db("bdshareboard")
 	or die("No conecto esa base de datos");
 
-	$ingreso = session_start();
-
-	var_dump($ingreso);
+	session_start();
 
 	$data = file_get_contents("php://input");
     
