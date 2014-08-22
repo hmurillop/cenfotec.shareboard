@@ -33,16 +33,32 @@ function ObtenerPublicacionBlogPorIdUsuario($idUsuario){
 }
 
 
+function InsertarPublicacionBlog($idBlog,$titulo,$entrada){
+	include('../cad/blog_ad.php');//Incluye el archivo de conexion a base de datos
+	$blog = new blog_ad();			
+	$datosPublicacion=$blog->InsertarPublicacionBlog($idBlog,$titulo,$entrada);
 
-$accion = $_REQUEST['accion'];
+	echo json_encode($datosPublicacion);
+}
 
-switch ($accion ) {
+
+
+$xxx = $_REQUEST['accion'];
+//$request_body = file_get_contents('php://input');
+//$data = json_decode($request_body);
+
+//$titulo=accion.titulo;
+
+switch ($xxx ) {
     case "obtenerPublicacion":
         //ObtenerPublicacionBlogPorId(1);
 		ObtenerPublicacionBlogPorIdUsuario(1);
         break;  
 	 case "obtenerPublicacionPorUsuario":
         ObtenerPublicacionBlogPorIdUsuario(1);
+        break; 
+	case "InsertarPublicacionBlog":
+        InsertarPublicacionBlog(1,$data['titulo'],$data['entrada']);		
         break;  		
     default:
         echo "Opcion invalida";

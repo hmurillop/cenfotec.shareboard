@@ -1,4 +1,6 @@
-<section ng-controller="dialogServiceTest" >
+
+<!-- <section ng-controller="dialogServiceTest" > -->
+<section>
     <ul class="nav nav-pills"class="pad" >                                        
                     <li ng-class="{active:panel.isSelected(3)}"><a href ng-click="panel.selectTab(2)">Comentarios</a></li>
 					 <li> <button class="btn btn-success" ng-click="launch('confirm')">Denunciar</button> </li>			
@@ -16,28 +18,29 @@
     </ul>
               
                  <div class="panel" ng-show="panel.isSelected(2)">                  
-                   <!-- <blockquote ng-repeat="comentario in blog.comentarios" ng-show="comentario.enable"> -->
-                   <!-- <blockquote ng-repeat="comentario in blog.comentario"> -->
-                   <blockquote ng-repeat="blog.comentario">
-					   <!-- <button class="btn btn-default btn-xs"  ng-controller="comentarioController as comentarioCtrl" ng-click="comentarioCtrl.deleteComment(comentario)" ng-show="store.blog.isOwner" >Eliminar</button> -->
+                   
+				   <!-- <blockquote ng-repeat="comentario in blog.comentarios" ng-show="comentario.enable" > -->
+				   <blockquote ng-repeat="comentario in blog.comentario" >
+					   <!-- <button class="btn btn-default btn-xs"  ng-controller="comentarioController as comentarioCtrl" ng-click="comentarioCtrl.deleteComment(comentario)" ng-show="store.blog.isOwner" >Eliminar</button>  -->
 					   <em class="pull-right">{{'1388123412323'|date:'MM/dd/yyyy"h:mma'}}</em>
-							<!-- {{comentario.usuario}} -->
-							<!-- {{comentario.comentario}}     -->
-							{{blog}}    
-						<!-- <button class="btn btn-success" ng-click="launch('confirm')">Denunciar</button> -->
-						
-                  </blockquote>
-
+							{{comentario.usuario}} 
+							{{comentario.comentario}}    
+							
+						<!-- <button class="btn btn-success" ng-click="launch('confirm')">Denunciar</button> -->				
+					</blockquote>
+				</div>
+				  
 				<div>					
                   <form name="reviewForm" ng-controller="comentarioController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addcomentarios(blog)" novalidate>
-					 <blockquote>
-							<!-- {{reviewCtrl.comentario.usuario }} -->
-							{{reviewCtrl.comentario.fecha}}
-							{{reviewCtrl.comentario.comentario}}
+					 <blockquote>														
+							{{reviewCtrl.comentarios.comentario}}
 					 </blockquote>
 				 
 						<textarea ng-model="reviewCtrl.newComentario.comentario" placeholder="Comentar" required></textarea>                                    						
 						<input type="submit" value="Enviar" />
                   </form>
                  </div>
-</section>
+				</div>
+ </section>
+ 
+ 

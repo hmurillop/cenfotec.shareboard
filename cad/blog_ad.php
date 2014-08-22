@@ -28,6 +28,7 @@ class blog_ad{
 			$Str_Query = 'select * from tbpublicaionesblog where idBlog='.$id.';';		
 			$conexion = $this->Obj_BD->Conectar();		
 			$Obj_resultado = $this->Obj_BD->SQLQuery($conexion,$Str_Query);				
+			$Obj_respuesta ='';
 			if(!$Obj_resultado){				
 			$Obj_respuesta = '<b>ERROR:</b> No se logro realizar la transaccion.<br><b>Detalle: </b>'.mysql_error();			
 			}else{									
@@ -58,6 +59,7 @@ class blog_ad{
 				
 				$conexion = $this->Obj_BD->Conectar();		
 				$resultado = $this->Obj_BD->SQLQuery($conexion,$Str_Query);				
+				$Obj_respuesta ='';
 				if(!$resultado){				
 				$Obj_respuesta = '<b>ERROR:</b> No se logro realizar la transaccion.<br><b>Detalle: </b>'.mysql_error();			
 				}else{									
@@ -96,6 +98,7 @@ class blog_ad{
 			$conexion = $this->Obj_BD->Conectar();		
 
 			$Obj_resultado = $this->Obj_BD->SQLQuery($conexion,$Str_Query);				
+			$Obj_respuesta ='';
 			if(!$Obj_resultado){				
 			$Obj_respuesta = '<b>ERROR:</b> No se logro realizar la transaccion.<br><b>Detalle: </b>'.mysql_error();			
 			}else{									
@@ -114,6 +117,45 @@ class blog_ad{
 		}	
 	}
 	
+	public function InsertarPublicacionBlog($idBlog,$titulo,$entrada){		
+	
+		try{			
+				if(!$this->Obj_BD){				
+					include('BaseDatos_AD.php');//Incluye el archivo de conexion a base de datos			
+					$this->Obj_BD = new BaseDatos_AD();						
+				}
+				$Str_Query = 'insert into tbpublicaionesblog
+													(IdBlog,
+													 titulo,
+													 entrada,
+													 hora,
+													 fecha,
+													 denunciar
+													)
+										values ('.$idBlog.','.
+												"'".$titulo."'".','.
+												"'".$entrada."'".',
+												TIME(NOW()),
+												NOW(),
+												0
+												)'.';';			
+				//$Str_Query = 'select * from tbcomentariosblog where IdPublicacionesBlog=1;'		
+				echo $Str_Query;
+				$conexion = $this->Obj_BD->Conectar();		
+				$resultado = $this->Obj_BD->SQLQuery($conexion,$Str_Query);			
+				$Obj_respuesta ='';
+				if(!$resultado){				
+				$Obj_respuesta = '<b>ERROR:</b> No se logro realizar la transaccion.<br><b>Detalle: </b>'.mysql_error();			
+				}
+				$this->Obj_BD->FreeMem($resultado);			
+				$this->Obj_BD->Cerrar($conexion);						
+			return $Obj_respuesta;
+			
+		}catch (Exception $ERROR){			
+			throw $ERROR;		
+		}	
+	}
+
 	
 	}
 ?>

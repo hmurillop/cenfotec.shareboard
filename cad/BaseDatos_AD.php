@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL);
-error_reporting(E_ALL ^ E_DEPRECATED);
+error_reporting(E_ALL ^ E_DEPRECATED);// esto sirve para que no le de error a david
 ini_set("display_errors", 1);
 /**Clase utilizada para accesar a la base de datos
  */

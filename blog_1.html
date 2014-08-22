@@ -167,11 +167,13 @@
 								<form role="form" name="entryForm" ng-controller="entryController as entryCtrl" ng-submit="entryForm.$valid && entryCtrl.addentry(store.blog)">
 
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Título" ng-model="entryCtrl.newEntry.title">
+                                        <!-- <input class="form-control" placeholder="Título" ng-model="entryCtrl.newEntry.title"> -->
+                                        <input class="form-control" placeholder="Título" ng-model="entryCtrl.newEntry.titulo">
                                     </div>
 
                                     <div class="form-group">
-                                        <textarea class="form-control" placeholder="Texto" rows="3" ng-model="entryCtrl.newEntry.entry"></textarea>
+                                        <!-- <textarea class="form-control" placeholder="Texto" rows="3" ng-model="entryCtrl.newEntry.entry"></textarea> -->
+                                        <textarea class="form-control" placeholder="Texto" rows="3" ng-model="entryCtrl.newEntry.entrada"></textarea>
                                     </div>
 
                                     <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-pencil"></i>Publicar</button>
@@ -204,8 +206,25 @@
                                     <p><span class="glyphicon glyphicon-time"></span> Publicado en Agosto 28, 2014 hora 10:00 PM</p>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
                                     <a class="btn btn-success" href="#">Leer más <span class="glyphicon glyphicon-chevron-right"></span></a>
+									
+									
+									<h2>Comentarios</h2>
 
-                                </div>
+									<!-- Posted Comments -->
+
+									<!-- Comment -->
+									<div class="media">
+										<a class="pull-left" href="#">
+											<img class="img-circle media-object" src="http://placehold.it/64x64" alt="">
+										</a>
+										<div class="media-body">
+											<h4 class="media-heading">Jackeline Román
+												<small>Agosto 28, 2014 hora 9:30 PM<i class="fa fa-fw fa-times pull-right"></i><i class="fa fa-fw fa-warning pull-right"></i></small>
+											</h4>												
+											<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras .</p>
+										</div>
+									</div>
+								</div>
 
                                 <!-- Second Blog Post -->
 								
@@ -287,11 +306,11 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
     <!-- Morris Charts JavaScript -->
     <script src="js/plugins/morris/raphael.min.js"></script>
     <script src="js/plugins/morris/morris.min.js"></script>
     <script src="js/plugins/morris/morris-data.js"></script>
+
 
 </body>
 
