@@ -80,18 +80,18 @@ class blog_ad{
 
 	public function ObtenerPublicacionBlogPorIdUsuario($id){		
 		try{			
-				//if(!Obj_BD){				
+				if(!$this->Obj_BD){				
 					include('BaseDatos_AD.php');//Incluye el archivo de conexion a base de datos			
 
 			$this->Obj_BD = new BaseDatos_AD();						
-				//}
+				}
 			
 			$Str_Query = "select usuarios.IdUsuario,concat(usuarios.nombre ,' ',usuarios.apellido1 ,' ',usuarios.apellido2) as usuario , 
 									publicaciones.IdPublicacionesBlog,publicaciones.titulo,publicaciones.entrada,true as enable
 									from tbblog blog
 									inner join tbpublicaionesblog publicaciones on blog.IdBlog=publicaciones.IdBlog
 									inner join tbusuario usuarios on blog.IdUsuario=usuarios.IdUsuario
-									where blog.IdUsuario=1";		
+									where blog.IdUsuario=".$id.";";		
 									
 			//$Str_Query = 'select * from tbpublicaionesblog';									
 			
@@ -104,7 +104,7 @@ class blog_ad{
 			}else{									
 					$Int_Contador = 0;					
 					while($Obj_fila = mysql_fetch_assoc($Obj_resultado)){					
-						$Obj_respuesta[$Int_Contador] = $Obj_fila;					
+						$Obj_respuesta[$Int_Contador] = array_map('utf8_encode', $Obj_fila);					
 						$Int_Contador++;				
 					}
 			}			
@@ -139,8 +139,7 @@ class blog_ad{
 												NOW(),
 												0
 												)'.';';			
-				//$Str_Query = 'select * from tbcomentariosblog where IdPublicacionesBlog=1;'		
-				echo $Str_Query;
+				//$Str_Query = 'select * from tbcomentariosblog where IdPublicacionesBlog=1;'						
 				$conexion = $this->Obj_BD->Conectar();		
 				$resultado = $this->Obj_BD->SQLQuery($conexion,$Str_Query);			
 				$Obj_respuesta ='';
