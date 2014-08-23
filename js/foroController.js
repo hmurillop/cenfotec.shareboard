@@ -1,49 +1,7 @@
 (function() {
 
     var app = angular.module('foro', ['ui.bootstrap']);
-    // angular.module('blog', ['store-blogs', 'modalTest','main']);
 
-   /* app.controller('StoreController', ['$http',
-        function($http) {
-            var store = this;
-
-            store.blog = [];
-			
-            $http.get('blogs.json').success(function(data) { // el get hay que asignarle la ruta del documento de JSon para que aceda
-                store.blog = data;
-            });
-        }	
-    ]);
-
-    app.controller("entryController", function() {
-        this.entry = {};
-
-        this.addentry = function(blog) {
-		this.newEntry.enable=true;
-            blog.entries.unshift(this.newEntry); //.push agregar un nuevo elemento a un arreglo unshift me lo agrega arriba
-            this.newEntry = {}; //asigna a una nueva review los cambios del submit, asigna los cambios a la ultima asignacion  del puntero o variable
-        };
-		
-		this.deleteEntry = function(entry) {
-             entry.enable=false;
-        };
-    });
-	
-    app.controller("comentarioController", function() {
-        this.comment = {};
-
-        this.addcomentarios = function(entry) {
-			this.newComentario.enable=true;
-		    this.newComentario.usuario="jacqueline";
-            entry.comentarios.push(this.newComentario); //.push agregar un nuevo elemento a un arreglo 
-            this.newComentario = {}; //asigna a una nueva review los cambios del submit, asigna los cambios a la ultima asignacion  del puntero o variable
-        };
-		
-		this.deleteComment = function(comment) {
-			comment.enable=false;
-        };
-		
-    });*/
 
     app.controller('foroMakerCtrl', ['$scope', function($scope) {
             $scope.master = {};
@@ -59,18 +17,33 @@
 
     }]);
 
-    app.controller('generalForoCtrl', ['$scope', function($scope) {
-
+    app.controller('generalForoCtrl', ['$scope', '$http', function ($scope, $http) {
+        $scope.tab = 1;
         $scope.flag= false;
-        $scope.flag1= false;
+        $scope.users=[];
+        $scope.master={};
+
+        $scope.tabSelected = function  (navTab) {
+            return $scope.tab == navTab;
+        };
+        $scope.selectTab = function  (selectedTab) {
+            $scope.tab = selectedTab;
+        };
 
         $scope.showFormAddPost = function(){
             $scope.flag= true;
-        }
+        };
 
-        $scope.showFormAddForo = function(){
-            $scope.flag1= true;
-        }
+        $scope.addUser = function(selected){
+
+        $scope.master= angular.copy(selected);
+        $scope.users.push($scope.master);
+        console.log($scope.users);
+        $scope.master = {};
+
+            
+
+        };
 
     }]);
 
@@ -80,19 +53,8 @@
             
             var store = this;
 
-            //store.blog = [];
-			
-            /*$http.get('blogs.json').success(function(data) { // el get hay que asignarle la ruta del documento de JSon para que aceda
-                store.blog = data;
-            });*/
-
 			$http.post('ln/makeForo_ln.php?accion=obtenerListaCarrera', { "data" : ''}).
 				success(function(data, status) {
-					/*$scope.status = status;
-					$scope.data = data;
-					$scope.result = data; // Show result from server in our <pre></pre> element*/
-					//alert(angular.toJson(data));
-					//store.blog=angular.toJson(data);
 					store.foroCarreras=data;
 				}).
 				error(function(data, status) {
@@ -102,11 +64,6 @@
 
             $http.post('ln/makeForo_ln.php?accion=obtenerListaCursos', { "data" : ''}).
                 success(function(data, status) {
-                    /*$scope.status = status;
-                    $scope.data = data;
-                    $scope.result = data; // Show result from server in our <pre></pre> element*/
-                    //alert(angular.toJson(data));
-                    //store.blog=angular.toJson(data);
                     store.foroCursos=data;
                 }).
                 error(function(data, status) {
@@ -117,11 +74,6 @@
 
             $http.post('ln/makeForo_ln.php?accion=obtenerListaProfesores', { "data" : ''}).
                 success(function(data, status) {
-                    /*$scope.status = status;
-                    $scope.data = data;
-                    $scope.result = data; // Show result from server in our <pre></pre> element*/
-                    //alert(angular.toJson(data));
-                    //store.blog=angular.toJson(data);
                     store.foroProfesores=data;
                 }).
                 error(function(data, status) {
@@ -132,11 +84,6 @@
 
                 $http.post('ln/makeForo_ln.php?accion=obtenerListaUsuarios', { "data" : ''}).
                 success(function(data, status) {
-                    /*$scope.status = status;
-                    $scope.data = data;
-                    $scope.result = data; // Show result from server in our <pre></pre> element*/
-                    //alert(angular.toJson(data));
-                    //store.blog=angular.toJson(data);
                     store.foroUsuarios=data;
                 }).
                 error(function(data, status) {

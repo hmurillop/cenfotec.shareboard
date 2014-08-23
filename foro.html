@@ -109,11 +109,11 @@
                 <div class="row">
 
                 <div class="col-sm-12">
-                        <button type="button" class="btn btn-success"><i class="fa fa-fw fa-search"></i>Buscar Foro</button>
-                        <button type="button" class="btn btn-success" ng-click="showFormAddForo()"><i class="fa fa-fw fa-plus"></i>Nuevo foro</button>
-                        <button type="button" class="btn btn-success"><i class="fa fa-fw fa-pencil"></i>Editar foro</button>
+                        <button type="button" class="btn btn-success" ng-click="selectTab(1)"><i class="fa fa-fw fa-group"></i>Integrantes</button>
+                        <button type="button" class="btn btn-success" ng-click="selectTab(2)"><i class="fa fa-fw fa-search"></i>Buscar Foro</button>
+                        <button type="button" class="btn btn-success" ng-click="selectTab(3)"><i class="fa fa-fw fa-plus"></i>Nuevo foro</button>
+                        <button type="button" class="btn btn-success" ng-click="selectTab(3)"><i class="fa fa-fw fa-pencil"></i>Editar foro</button>
                         <button type="button" class="btn btn-success" ng-click="showFormAddPost()"><i class="fa fa-fw fa-plus"></i>Nuevo tema</button>
-                        <button type="button" class="btn btn-success"><i class="fa fa-fw fa-group"></i>Integrantes</button>
                         <hr>
                 </div>
 
@@ -140,7 +140,7 @@
                             </div>
                         </div>
                         
-                        <div class="panel panel-success">
+                        <div class="panel panel-success" ng-show="tabSelected(1)">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Integrantes</h3>
                             </div>
@@ -183,7 +183,7 @@
                         </div>
 
 
-                        <div class="panel panel-success">
+                        <div class="panel panel-success" ng-show="tabSelected(2)">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-fw fa-info"></i>Información de foro</h3>
                             </div>
@@ -221,13 +221,10 @@
                             <div class="list-group">
                                 <a href="#" class="list-group-item">Resultado 1</a>
                                 <a href="#" class="list-group-item">Resultado 2</a>
-                                <a href="#" class="list-group-item">Resultado 3</a>
-                                <a href="#" class="list-group-item">Resultado 4</a>
-                                <a href="#" class="list-group-item">Resultado 5</a>
                             </div>
                         </div>
 
-                        <div class="panel panel-success" ng-show="flag1" ng-controller="foroMakerCtrl">
+                        <div class="panel panel-success" ng-show="tabSelected(3)" ng-controller="foroMakerCtrl">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-fw fa-plus"></i>Crear foro{{4+1}}</h3>
                             </div>
@@ -237,14 +234,14 @@
                                             <div class="form-group">
                                                 <label>Carrera</label>
                                                 <select name="carrera" class="form-control" ng-model="newForo.major">
-                                                    <option selected ng-repeat="carrera in store.foroCarreras" value="{{carrera.nombreCarrera}}" >{{carrera.nombreCarrera}}</option>
+                                                    <option selected ng-repeat="carrera in store.foroCarreras track by $index" value="{{carrera.nombreCarrera}}" >{{carrera.nombreCarrera}}</option>
                                                 </select>
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Curso</label>
                                                 <select name="curso" class="form-control"  ng-model="newForo.subject">
-                                                    <option selected ng-repeat="curso in store.foroCursos" value="{{curso.nombreCurso}}" >{{curso.nombreCurso}}</option>
+                                                    <option selected ng-repeat="curso in store.foroCursos  track by $index" value="{{curso.nombreCurso}}" >{{curso.nombreCurso}}</option>
                                                 </select>
                                             </div>
 
@@ -260,7 +257,7 @@
                                             <div class="form-group">
                                                 <label>Profesor</label>
                                                 <select name="profesor" class="form-control"  ng-model="newForo.professor">
-                                                    <option selected ng-repeat="profesor in store.foroProfesores" value="{{profesor.nombre}}{{profesor.apellido1}}">{{profesor.nombre}} {{profesor.apellido1}}</option>
+                                                    <option selected ng-repeat="profesor in store.foroProfesores track by $index " value="{{profesor.nombre}}{{profesor.apellido1}}">{{profesor.nombre}} {{profesor.apellido1}}</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
@@ -275,53 +272,33 @@
                                             <label>Miembros</label>
 
                                             <div class="form-group input-group">
-                                                <input type="text" ng-model="selected" typeahead="nombre as profesor.nombre for profesor in store.foroProfesores | filter:{nombre:$viewValue}"  class="form-control">
-                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-fw fa-search"></i></button></span>
+                                                <input type="text" ng-model="selected" typeahead="nombre as profesor.nombre for profesor in store.foroProfesores | filter:{nombre:$viewValue}" class="form-control">
+                                                <span class="input-group-btn"><button ng-click="addUser(selected)" class="btn btn-default" type="button"><i class="fa fa-fw fa-search"></i></button></span>
                                             </div>
-                                            <pre>Model: {{selected | json}}</pre>
 
                                             <ul class="list-group">
-                                                <li class="list-group-item">
+                                                
+                                                <li class="list-group-item" ng-repeat="user in users track by $index | orderBy:'selected'">
+                                                    
                                                     <div class="form-group">
                                                     
-                                                        <label>Diego Vargas</label><i class="fa fa-fw fa-times pull-right"></i>
-                                                        <select class="form-control"  ng-model="newForo.period">
-                                                            <option selected ><i class="fa fa-fw fa-user"></i>Estudiante</option>
-                                                            <option><i class="fa fa-fw fa-male"></i>Asistente</option>
-                                                            <option><i class="fa fa-fw fa-child"></i>Invitado</option>
-                                                        </select>
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    <div class="form-group">
-                                                    
-                                                        <label>Diego Vargas</label><i class="fa fa-fw fa-times pull-right"></i>
-                                                        <select class="form-control"  ng-model="newForo.period">
-                                                            <option selected ><i class="fa fa-fw fa-user"></i>Estudiante</option>
-                                                            <option><i class="fa fa-fw fa-male"></i>Asistente</option>
-                                                            <option><i class="fa fa-fw fa-child"></i>Invitado</option>
-                                                        </select>
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    <div class="form-group">
-                                                    
-                                                        <label>Diego Vargas</label><i class="fa fa-fw fa-times pull-right"></i>
+                                                        <label>{{selected}}</label><i class="fa fa-fw fa-times pull-right"></i>
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"><i class="fa fa-fw fa-user"></i>Estudiante
+                                                                <input type="checkbox" name="papel"><i class="fa fa-fw fa-user"></i>Estudiante
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"><i class="fa fa-fw fa-male"></i>Asistente
+                                                                <input type="checkbox" name="papel"><i class="fa fa-fw fa-male"></i>Asistente
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"><i class="fa fa-fw fa-child"></i>Invitado
+                                                                <input type="checkbox" name="papel"><i class="fa fa-fw fa-child"></i>Invitado
                                                             </label>
                                                         </div>
+                                                        
                                                     </div>  
                                                 </li>
                                             </ul>
@@ -341,9 +318,6 @@
                             <div class="list-group">
                                 <a href="#" class="list-group-item">Resultado 1</a>
                                 <a href="#" class="list-group-item">Resultado 2</a>
-                                <a href="#" class="list-group-item">Resultado 3</a>
-                                <a href="#" class="list-group-item">Resultado 4</a>
-                                <a href="#" class="list-group-item">Resultado 5</a>
                             </div>
                         </div>
 
